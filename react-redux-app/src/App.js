@@ -1,26 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useEffect} from 'react';
 import './App.css';
 
-function App() {
+import { connect } from "react-redux";
+import { getActivity } from "./actions/actions";
+
+//import components
+import Activity from "./components/Activity";
+import ActivityButton from "./components/ActivityButton;"
+
+function App(props) {
+
+  useEffect(() => {
+    props.getActivity();
+  }, [])
+
+  const handleClick = e => {
+    e.preventDefault()
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Bored? Try this: </h1>
+      <Activity activity={props.activity} handleClick={handleClick} />
+      <div className="activity-button">
+        <ActivityButton />
+      </div>
     </div>
   );
 }
 
-export default App;
+function mapStateToProps(state) {
+  return {
+    activity: state.activity,  // from reducer's initial state
+    isActivityLoading: state.isLoading, // from reducer's initial state
+    activityError: state.error // from reducer's initial state
+  };
+}
+
+const mapDispatchToProps = {
+  getActivity // from the import
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);
