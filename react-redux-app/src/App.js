@@ -9,7 +9,6 @@ import Activity from "./components/Activity";
 import ActivityButton from "./components/ActivityButton;"
 
 function App(props) {
-
   useEffect(() => {
     props.getActivity();
   }, [])
