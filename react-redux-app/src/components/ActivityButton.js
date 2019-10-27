@@ -1,6 +1,6 @@
 import React from "react";
 
-const ActivityButton= (props) => {
+function ActivityButton(props) {
     return(
         <div>
             <button onClick={() => props.handleClick}>New Activity</button>
@@ -8,4 +8,4 @@ const ActivityButton= (props) => {
     )
 }
 
-export ActivityButton;
+export default ActivityButton;
