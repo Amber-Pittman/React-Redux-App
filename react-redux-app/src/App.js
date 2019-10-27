@@ -11,7 +11,8 @@ import ActivityButton from "./components/ActivityButton";
 function App(props) {
   useEffect(() => {
     props.getActivity();
-  }, [])
+  }, []) // putting in props inside the brackets makes it run a continuous loop - Don't do that
+         // also removing the brackets creates same issue
 
   const handleClick = e => {
     e.preventDefault()

@@ -10,6 +10,8 @@ import thunk from "redux-thunk";
 import { reducer } from "./reducers/reducer";
 
 const store = createStore(reducer, applyMiddleware(thunk, logger));
+// if you use redux-logger with other middleware packages, make sure 
+// logger is passed to applyMiddleware last.
 
 ReactDOM.render(
     <Provider store={store}>
