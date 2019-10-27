@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const GET_ACTIVITY = "GET_ACTIVITY";
 export const GET_ACTIVITY_SUCCESS = "GET_ACTIVITY_SUCCESS";
-export const GET_ACTIVITY = "GET_ACTIVITY_ERROR";
+export const GET_ACTIVITY_ERROR = "GET_ACTIVITY_ERROR";
 
 export function getActivity() {
     return dispatch => {

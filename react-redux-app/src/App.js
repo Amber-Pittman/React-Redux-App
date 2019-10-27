@@ -6,7 +6,7 @@ import { getActivity } from "./actions/actions";
 
 //import components
 import Activity from "./components/Activity";
-import ActivityButton from "./components/ActivityButton;"
+import ActivityButton from "./components/ActivityButton";
 
 function App(props) {
   useEffect(() => {

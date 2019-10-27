@@ -1,4 +1,4 @@
-import { GET_ACTIVITY, GET_ACTIVITY_SUCCESS, GET_ACTIVITY_ERROR } from "";
+import { GET_ACTIVITY, GET_ACTIVITY_SUCCESS, GET_ACTIVITY_ERROR } from "../actions/actions";
 
 export const initialState = {
     activity: null,
